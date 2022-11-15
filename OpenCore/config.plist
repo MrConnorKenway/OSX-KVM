@@ -343,7 +343,7 @@
 				<key>@3,name</key>
 				<string>ATY,Henbury</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x1,0x3)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>built-in</key>
 				<data>AQ==</data>
@@ -616,7 +616,7 @@
 				<key>Comment</key>
 				<string>Bluetooth firmware</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmFirmwareData</string>
 				<key>MaxKernel</key>
@@ -634,7 +634,7 @@
 				<key>Comment</key>
 				<string>Bluetooth support for macOS 10.11-10.14</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmNonPatchRAM2</string>
 				<key>MaxKernel</key>
@@ -652,7 +652,7 @@
 				<key>Comment</key>
 				<string>Bluetooth support for macOS 10.11-10.14</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmPatchRAM2</string>
 				<key>MaxKernel</key>
@@ -670,7 +670,7 @@
 				<key>Comment</key>
 				<string>Bluetooth support for macOS 10.15-</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmPatchRAM3</string>
 				<key>MaxKernel</key>
@@ -688,7 +688,7 @@
 				<key>Comment</key>
 				<string>Bluetooth support for macOS 10.15-11</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
@@ -706,7 +706,7 @@
 				<key>Comment</key>
 				<string>Bluetooth support for macOS 12-</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BlueToolFixup</string>
 				<key>MaxKernel</key>
@@ -935,9 +935,9 @@
 			<false/>
 			<key>AppleXcpmForceBoost</key>
 			<false/>
-			<key>CustomPciSerialDevice</key>
-			<false/>
 			<key>CustomSMBIOSGuid</key>
+			<false/>
+			<key>CustomPciSerialDevice</key>
 			<false/>
 			<key>DisableIoMapper</key>
 			<false/>
@@ -1063,12 +1063,39 @@
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>SecureBootModel</key>
-			<string>Disabled</string>
+			<string>Default</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
 		<key>Serial</key>
 		<dict>
+			<key>Custom</key>
+			<dict>
+				<key>BaudRate</key>
+				<integer>115200</integer>
+				<key>ClockRate</key>
+				<integer>1843200</integer>
+				<key>DetectCable</key>
+				<false/>
+				<key>ExtendedTxFifoSize</key>
+				<integer>64</integer>
+				<key>FifoControl</key>
+				<integer>7</integer>
+				<key>LineControl</key>
+				<integer>7</integer>
+				<key>PciDeviceInfo</key>
+				<data>/w==</data>
+				<key>RegisterAccessWidth</key>
+				<integer>8</integer>
+				<key>RegisterBase</key>
+				<integer>1016</integer>
+				<key>RegisterStride</key>
+				<integer>1</integer>
+				<key>UseHardwareFlowControl</key>
+				<false/>
+				<key>UseMmio</key>
+				<false/>
+			</dict>
 			<key>Init</key>
 			<false/>
 			<key>Override</key>
@@ -1167,7 +1194,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 tlbto_us=0 vti=9 alcid=7 agdpmod=pikera enable-metal=01000000 csr-active-config=00000000 SecureBootModel=j160</string>
+				<string>keepsyms=1 tlbto_us=0 vti=9 agdpmod=pikera</string>
 				<key>csr-active-config</key>
 				<data>ZwAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -1194,6 +1221,8 @@
 		</dict>
 		<key>LegacyOverwrite</key>
 		<false/>
+		<key>WriteFlash</key>
+		<true/>
 		<key>LegacySchema</key>
 		<dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
@@ -1222,8 +1251,6 @@
 				<string>BootOrder</string>
 			</array>
 		</dict>
-		<key>WriteFlash</key>
-		<true/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -1235,12 +1262,12 @@
 		<dict>
 			<key>AdviseFeatures</key>
 			<false/>
-			<key>MLB</key>
-			<string>C02717306J9JG361M</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
+			<key>MLB</key>
+			<string>F5K936802J9FHDDFB</string>
 			<key>ProcessorType</key>
-			<integer>0</integer>
+			<integer>3842</integer>
 			<key>ROM</key>
 			<data>UlQA5oVA</data>
 			<key>SpoofVendor</key>
@@ -1248,11 +1275,11 @@
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>iMacPro1,1</string>
+			<string>MacPro7,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02TM2ZBHX87</string>
+			<string>F5KZCRZ5P7QM</string>
 			<key>SystemUUID</key>
-			<string>007076A6-F2A2-4461-BBE5-BAD019F8025A</string>
+			<string>13AFBE72-47F1-4A93-AD39-E067DFE88AE1</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1296,10 +1323,10 @@
 			<integer>5</integer>
 			<key>PointerPollMask</key>
 			<integer>-1</integer>
-			<key>PointerPollMax</key>
-			<integer>80</integer>
 			<key>PointerPollMin</key>
 			<integer>10</integer>
+			<key>PointerPollMax</key>
+			<integer>80</integer>
 			<key>PointerSpeedDiv</key>
 			<integer>1</integer>
 			<key>PointerSpeedMul</key>
@@ -1605,15 +1632,15 @@
 			<key>ReplaceTabWithSpace</key>
 			<false/>
 			<key>Resolution</key>
-			<string>1920x1080@32</string>
+			<string>Max</string>
 			<key>SanitiseClearScreen</key>
 			<false/>
 			<key>TextRenderer</key>
 			<string>BuiltinGraphics</string>
-			<key>UIScale</key>
-			<integer>0</integer>
 			<key>UgaPassThrough</key>
 			<false/>
+			<key>UIScale</key>
+			<integer>0</integer>
 		</dict>
 		<key>ProtocolOverrides</key>
 		<dict>
